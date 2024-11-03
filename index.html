@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="styles/index.css">
+  <title>Jw Library</title>
+</head>
+
+  
+
+
+
+
+<div id="loading-screen">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/802013201/univ/art/802013201_univ_sqs_md.jpg" alt="JW LIBRARY" />
+       <pre>————— ————— —————</pre>
+    </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+  
+<body>
+  
+  
+  
+  
+  
+  
+  
+  <h1 id="homeTitle">Home</h1>
+  
+ <div class="home-container">
+   
+  <a href="https://wol.jw.org/en/wol/h/r1/lp-e">
+    <button class="daily-text-button" id="dailyTextButton">
+      <p>
+     Thursday, Oct 31
+      
+      </p>
+      
+    </button>
+  </a>
+    
+  
+
+  <h2 id="faveTitle">Favourite</h2>
+  
+  <a href="https://www.jw.org/en/library">
+    <button class="fave-button" onclick="alert('download your favourite items')" id="faveButton">
+      Add to favourite
+    </button>
+  </a>
+  
+  <br><br>
+
+  <h2 id="toolboxTitle">Teaching toolbox</h2>
+  
+  <div class="toolbox-container">
+          <a href="Android/data/org.jw.jwlibrary.mobile/files/Movies/jwb-114_E_01_r720P.mp4"> 
+       <button class="left-button"id="leftButton">
+         <img src="https://cms-imgp.jw-cdn.org/img/p/502014311/univ/art/502014311_univ_lss_lg.jpg"> <br>
+         
+         <p1 id = "leftButtonText">
+         Why study the bible?
+       </button>
+        </a> 
+        </p1>
+ 
+         <a href="lffv_E_011_r360P.mp4">        
+          <button class="right-button"id="rightButton">
+         
+         <img src="https://cms-imgp.jw-cdn.org/img/p/502014311/univ/art/502014311_univ_lss_lg.jpg"> 
+         <br>
+           Right button
+         </button>
+         </a> 
+
+           <a href="hhhddd"
+           <button class="right-button-duplicate"id="rightDuplicateButton">
+             Right Button
+           </button>
+         </a> 
+         
+         
+         <a href="hhhddd"
+           <button class="second-left"id="secondLeft">
+             Right Button
+           </button>
+         </a> 
+         
+         
+         
+         <a href="hhhddd"
+           <button class="third-left"id="thirdLeft">
+             Right Button
+           </button>
+         </a> 
+         
+         
+         
+         <a href="hhhddd"
+           <button class="second-right"id="secondRight">
+             Right Button
+           </button>
+         </a> 
+    </div>
+         
+  
+
+    <h2 id="whatsnewTitle">What's New</h2>
+  
+  
+  
+  
+  <div class="wha-scroll">
+  
+    <div class="wha-one" onclick='
+    
+     window.location.href ="https://www.jw.org/en/library/magazines/watchtower-study-january-2025/"'> 
+        <img src="https://cms-imgp.jw-cdn.org/img/p/w/202501/E/pt/w_E_202501_md.jpg" alt="watchtower picture">
+        <span class ="whaone-text">
+              <p2 id = "whaoneText">
+         The Watchtower, January 2025 <br> <strong>Study Articles for march 3 to April 6</strong>
+         
+         <br><br><br><br><br>
+           English • 8 days ago</p>
+        
+        </span>
+        <button class="menu-button" onclick="toggleDropdown(event)">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAACJiYl/f3/i4uILCwsGBgYWFhZDQ0Pe3t7KysqFhYWOjo5paWmwsLDV1dVYWFigoKBjY2MoKCg7Ozunp6ceHh7t7e1QUFBHR0cbGxtcXFwSEhK7u7vGxsb5+fl2dnYlJSW2traVlZU0NDR5eXmm8RIUAAACgElEQVR4nO3d65aaMBSG4UQEFQ+MgopHnDpz/7dYq1OLkKyuMD92N32fK9jfwphEd4gxAAAAAAAAAHorvRRHa0fj6US6km9Jx/bpTXGUT1sXL6Xr6ah6sw2RdEndrJo5rJ1J19TFsp3D2rN0VeG2R1eQvJKuK9jAlcNafQP+3R2kkK4r1MSdw9qtdGWB1r4gP6QrC+QZItZepSsLFPmCTKUrC+R9ItrmRO8YWUhXFijzBRlKVxZq487xIV1XMM9o1/al5VtrbfSttdyrX23T4d28naMvO6uLdEVdzZJ6DLV79pusfMZIVupmkBeT6W6fJPlhqW35DgAAAAAAAAAAAAD/h+E6ms+jte7/po1ZFL//Zy+0dZzVDcf1zodC7bmLc6PT6XiSrqibc9xsqklUJtmO2m1OR41jvmznsLaUrirc2ZXD2lS6rmCtc0kPB+m6QlWtkf4Qa+vOTN059B1OcvaY/qKtH9B7WmEgXVkgbxBtpxWuviDaWphPviDamjSrxJ0jly4smGdC1NdU7l6ixNo+WcbzSPQ9kNsyft/O8aFtgXKXtpZbG43bkZu0sbXKleYwZviyuZqr/Fx9OZVf80m8yqRr+abqdI2m17PmpwEAAAAAAAAAAAAA/ZVF49H9kgjd/05nuz/9AjvFUV5fOJloe4v0U+tlpurasB8u7TanuXRNXSxcjWdr6arCVY6+M2v3+npSPI2/2vqXjcndQdS1y3ovidDWRdebF+D35koCLon41/RmjPTmW6s384iZ9WOI9Git5V79ahvqd45LIlTuR4w5NHOspCvq6nV6T7SdpaypX7VZKv4V5Sb9LEZJvNkN1L65AgAAAAAAAMDf/QQLKRUMupyqlgAAAABJRU5ErkJggg==" alt ="menu" >
+
+        </button>
+        
+         <div  class="dropdown-content">
+          <a href="#" onclick="closeDropdown()">Add to favourite</a>
+          <a href="#" onclick="closeDropdown()">Share link</a>
+          
+          <a href="#" onclick="closeDropdown()">Delete</a>
+
+          
+          
+          
+          
+        </div>
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    <div class="wha-two" id ="wtwo">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/501700106/univ/art/501700106_univ_sqs_md.jpg" alt="Description">
+        <span class="whatwo-text">
+        
+         <p>Article Series <br>
+ <strong>
+ Become Jehovah's friend — Activities
+ </strong> <br><br><br><br>
+        English • 14 days ago
+ 
+ 
+           </p> 
+               </span>
+        <button class="menu-button">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAACJiYl/f3/i4uILCwsGBgYWFhZDQ0Pe3t7KysqFhYWOjo5paWmwsLDV1dVYWFigoKBjY2MoKCg7Ozunp6ceHh7t7e1QUFBHR0cbGxtcXFwSEhK7u7vGxsb5+fl2dnYlJSW2traVlZU0NDR5eXmm8RIUAAACgElEQVR4nO3d65aaMBSG4UQEFQ+MgopHnDpz/7dYq1OLkKyuMD92N32fK9jfwphEd4gxAAAAAAAAAHorvRRHa0fj6US6km9Jx/bpTXGUT1sXL6Xr6ah6sw2RdEndrJo5rJ1J19TFsp3D2rN0VeG2R1eQvJKuK9jAlcNafQP+3R2kkK4r1MSdw9qtdGWB1r4gP6QrC+QZItZepSsLFPmCTKUrC+R9ItrmRO8YWUhXFijzBRlKVxZq487xIV1XMM9o1/al5VtrbfSttdyrX23T4d28naMvO6uLdEVdzZJ6DLV79pusfMZIVupmkBeT6W6fJPlhqW35DgAAAAAAAAAAAAD/h+E6ms+jte7/po1ZFL//Zy+0dZzVDcf1zodC7bmLc6PT6XiSrqibc9xsqklUJtmO2m1OR41jvmznsLaUrirc2ZXD2lS6rmCtc0kPB+m6QlWtkf4Qa+vOTN059B1OcvaY/qKtH9B7WmEgXVkgbxBtpxWuviDaWphPviDamjSrxJ0jly4smGdC1NdU7l6ixNo+WcbzSPQ9kNsyft/O8aFtgXKXtpZbG43bkZu0sbXKleYwZviyuZqr/Fx9OZVf80m8yqRr+abqdI2m17PmpwEAAAAAAAAAAAAA/ZVF49H9kgjd/05nuz/9AjvFUV5fOJloe4v0U+tlpurasB8u7TanuXRNXSxcjWdr6arCVY6+M2v3+npSPI2/2vqXjcndQdS1y3ovidDWRdebF+D35koCLon41/RmjPTmW6s384iZ9WOI9Git5V79ahvqd45LIlTuR4w5NHOspCvq6nV6T7SdpaypX7VZKv4V5Sb9LEZJvNkN1L65AgAAAAAAAMDf/QQLKRUMupyqlgAAAABJRU5ErkJggg==" alt="Menu">
+        </button>
+        
+        
+         
+         <div  class="dropdown-content">
+          <a href="#" onclick="closeDropdown()">Pie</a>
+          <a href="#" onclick="closeDropdown()">Bie</a>
+        </div>
+        
+        
+       
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    <div class="wha-three" id = "wthree">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/es25/E/pt/es25_E_md.jpg" alt="Description">
+        <span class="whathree-text">
+       <p>
+           Brochures <br>
+           <strong>
+   Examining the Scriptures Daily — 2025
+           </strong>
+           <br><br><br><br>
+           English • 16 days ago
+       </p>
+        </span>
+        <button class="menu-button">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAACJiYl/f3/i4uILCwsGBgYWFhZDQ0Pe3t7KysqFhYWOjo5paWmwsLDV1dVYWFigoKBjY2MoKCg7Ozunp6ceHh7t7e1QUFBHR0cbGxtcXFwSEhK7u7vGxsb5+fl2dnYlJSW2traVlZU0NDR5eXmm8RIUAAACgElEQVR4nO3d65aaMBSG4UQEFQ+MgopHnDpz/7dYq1OLkKyuMD92N32fK9jfwphEd4gxAAAAAAAAAHorvRRHa0fj6US6km9Jx/bpTXGUT1sXL6Xr6ah6sw2RdEndrJo5rJ1J19TFsp3D2rN0VeG2R1eQvJKuK9jAlcNafQP+3R2kkK4r1MSdw9qtdGWB1r4gP6QrC+QZItZepSsLFPmCTKUrC+R9ItrmRO8YWUhXFijzBRlKVxZq487xIV1XMM9o1/al5VtrbfSttdyrX23T4d28naMvO6uLdEVdzZJ6DLV79pusfMZIVupmkBeT6W6fJPlhqW35DgAAAAAAAAAAAAD/h+E6ms+jte7/po1ZFL//Zy+0dZzVDcf1zodC7bmLc6PT6XiSrqibc9xsqklUJtmO2m1OR41jvmznsLaUrirc2ZXD2lS6rmCtc0kPB+m6QlWtkf4Qa+vOTN059B1OcvaY/qKtH9B7WmEgXVkgbxBtpxWuviDaWphPviDamjSrxJ0jly4smGdC1NdU7l6ixNo+WcbzSPQ9kNsyft/O8aFtgXKXtpZbG43bkZu0sbXKleYwZviyuZqr/Fx9OZVf80m8yqRr+abqdI2m17PmpwEAAAAAAAAAAAAA/ZVF49H9kgjd/05nuz/9AjvFUV5fOJloe4v0U+tlpurasB8u7TanuXRNXSxcjWdr6arCVY6+M2v3+npSPI2/2vqXjcndQdS1y3ovidDWRdebF+D35koCLon41/RmjPTmW6s384iZ9WOI9Git5V79ahvqd45LIlTuR4w5NHOspCvq6nV6T7SdpaypX7VZKv4V5Sb9LEZJvNkN1L65AgAAAAAAAMDf/QQLKRUMupyqlgAAAABJRU5ErkJggg==" alt="Menu">
+        </button>
+    </div>
+    
+    
+    
+    
+    
+    <div class="wha-four">
+        <img src="image1.jpg" alt="Description">
+        <span>Some text here</span>
+        <button class="menu-button">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAACJiYl/f3/i4uILCwsGBgYWFhZDQ0Pe3t7KysqFhYWOjo5paWmwsLDV1dVYWFigoKBjY2MoKCg7Ozunp6ceHh7t7e1QUFBHR0cbGxtcXFwSEhK7u7vGxsb5+fl2dnYlJSW2traVlZU0NDR5eXmm8RIUAAACgElEQVR4nO3d65aaMBSG4UQEFQ+MgopHnDpz/7dYq1OLkKyuMD92N32fK9jfwphEd4gxAAAAAAAAAHorvRRHa0fj6US6km9Jx/bpTXGUT1sXL6Xr6ah6sw2RdEndrJo5rJ1J19TFsp3D2rN0VeG2R1eQvJKuK9jAlcNafQP+3R2kkK4r1MSdw9qtdGWB1r4gP6QrC+QZItZepSsLFPmCTKUrC+R9ItrmRO8YWUhXFijzBRlKVxZq487xIV1XMM9o1/al5VtrbfSttdyrX23T4d28naMvO6uLdEVdzZJ6DLV79pusfMZIVupmkBeT6W6fJPlhqW35DgAAAAAAAAAAAAD/h+E6ms+jte7/po1ZFL//Zy+0dZzVDcf1zodC7bmLc6PT6XiSrqibc9xsqklUJtmO2m1OR41jvmznsLaUrirc2ZXD2lS6rmCtc0kPB+m6QlWtkf4Qa+vOTN059B1OcvaY/qKtH9B7WmEgXVkgbxBtpxWuviDaWphPviDamjSrxJ0jly4smGdC1NdU7l6ixNo+WcbzSPQ9kNsyft/O8aFtgXKXtpZbG43bkZu0sbXKleYwZviyuZqr/Fx9OZVf80m8yqRr+abqdI2m17PmpwEAAAAAAAAAAAAA/ZVF49H9kgjd/05nuz/9AjvFUV5fOJloe4v0U+tlpurasB8u7TanuXRNXSxcjWdr6arCVY6+M2v3+npSPI2/2vqXjcndQdS1y3ovidDWRdebF+D35koCLon41/RmjPTmW6s384iZ9WOI9Git5V79ahvqd45LIlTuR4w5NHOspCvq6nV6T7SdpaypX7VZKv4V5Sb9LEZJvNkN1L65AgAAAAAAAMDf/QQLKRUMupyqlgAAAABJRU5ErkJggg==" alt="Menu">
+        </button>
+    </div>
+    
+    
+    
+    
+    <div class="wha-five">
+        <img src="image1.jpg" alt="Description">
+        <span>Some text here</span>
+        <button class="menu-button">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAACJiYl/f3/i4uILCwsGBgYWFhZDQ0Pe3t7KysqFhYWOjo5paWmwsLDV1dVYWFigoKBjY2MoKCg7Ozunp6ceHh7t7e1QUFBHR0cbGxtcXFwSEhK7u7vGxsb5+fl2dnYlJSW2traVlZU0NDR5eXmm8RIUAAACgElEQVR4nO3d65aaMBSG4UQEFQ+MgopHnDpz/7dYq1OLkKyuMD92N32fK9jfwphEd4gxAAAAAAAAAHorvRRHa0fj6US6km9Jx/bpTXGUT1sXL6Xr6ah6sw2RdEndrJo5rJ1J19TFsp3D2rN0VeG2R1eQvJKuK9jAlcNafQP+3R2kkK4r1MSdw9qtdGWB1r4gP6QrC+QZItZepSsLFPmCTKUrC+R9ItrmRO8YWUhXFijzBRlKVxZq487xIV1XMM9o1/al5VtrbfSttdyrX23T4d28naMvO6uLdEVdzZJ6DLV79pusfMZIVupmkBeT6W6fJPlhqW35DgAAAAAAAAAAAAD/h+E6ms+jte7/po1ZFL//Zy+0dZzVDcf1zodC7bmLc6PT6XiSrqibc9xsqklUJtmO2m1OR41jvmznsLaUrirc2ZXD2lS6rmCtc0kPB+m6QlWtkf4Qa+vOTN059B1OcvaY/qKtH9B7WmEgXVkgbxBtpxWuviDaWphPviDamjSrxJ0jly4smGdC1NdU7l6ixNo+WcbzSPQ9kNsyft/O8aFtgXKXtpZbG43bkZu0sbXKleYwZviyuZqr/Fx9OZVf80m8yqRr+abqdI2m17PmpwEAAAAAAAAAAAAA/ZVF49H9kgjd/05nuz/9AjvFUV5fOJloe4v0U+tlpurasB8u7TanuXRNXSxcjWdr6arCVY6+M2v3+npSPI2/2vqXjcndQdS1y3ovidDWRdebF+D35koCLon41/RmjPTmW6s384iZ9WOI9Git5V79ahvqd45LIlTuR4w5NHOspCvq6nV6T7SdpaypX7VZKv4V5Sb9LEZJvNkN1L65AgAAAAAAAMDf/QQLKRUMupyqlgAAAABJRU5ErkJggg==" alt="Menu">
+        </button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Repeat for other .wha-two, .wha-three, etc. -->
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <!-- <div class="wha-scroll">
+  
+  <a href="https://www.jw.org/en/library/magazines/watchtower-study-january-2025/"
+       <button class="wha-one"id="whaOne">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/w/202501/E/pt/w_E_202501_md.jpg">
+         <p>
+         The Watchtower, January 2025 <br> <strong>Study Articles for march 3 to April 6</strong>
+         
+         <br><br><br><br><br><br>
+           English • 8 days ago</p>
+
+            
+            
+            
+            
+            
+            
+            
+   <!--   <div class="dropdown">
+        <button type="button" onclick="toggleDropdown()" class="dropbtn">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/502014311/univ/art/502014311_univ_lss_lg.jpg" alt="Dropdown Icon">
+        </button>
+        <div id="dropdownMenu" class="dropdown-content">
+          <a href="#" onclick="closeDropdown()">Pie</a>
+          <a href="#" onclick="closeDropdown()">Bie</a>
+        </div>
+      </a>
+            
+            
+         
+         
+         
+         
+         
+         
+         
+           
+         
+            
+            
+            
+            
+            
+         
+            
+            </button>
+            </a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+  
+<a href="https://www.jw.org/en/bible-teachings/children/become-jehovahs-friend/activities/Be-a-Friend-Make-a-Friend/"
+       <button class="wha-two"id="whaTwo">
+           <img src="https://cms-imgp.jw-cdn.org/img/p/501700106/univ/art/501700106_univ_sqs_md.jpg">
+           <p>Article Series <br>
+ <strong>
+ Become Jehovah's friend — Activities
+ </strong> <br><br><br><br><br><br>
+        English • 14 days ago
+ 
+ 
+           </p> 
+       
+       
+       
+         </button>
+            </a>
+  
+       <a href="https://www.jw.org/en/library/books/Examining-the-Scriptures-Daily-2025/"
+       <button class="wha-three"id="whaThree">
+          <img src="https://cms-imgp.jw-cdn.org/img/p/es25/E/pt/es25_E_md.jpg"> 
+       <p>
+           Brochures <br>
+           <strong>
+   Examining the Scriptures Daily — 2025
+           </strong>
+           <br><br><br><br><br><br>
+           English • 16 days ago
+       </p>
+         </button>
+            </a>
+  
+
+   <a href="hhhhhhh"
+       <button class="wha-four"
+       id="whaFour">
+         left button
+         </button>
+            </a>
+  
+
+
+     <a href="hhhhhhh"
+       <button class="wha-five"
+       id="whaFive">
+         left button
+         </button>
+            </a>
+  
+        </div>-->
+
+
+    
+    
+    
+
+
+<br>
+    
+    <div class="new-scroll">
+     
+         <a href="hhhddhdd"
+     <button class="new-one"id="newOne">
+       Left Button
+     </button>
+    </a> 
+    
+         <a href="tttt"      
+          <button class="new-two"id="newTwo">
+            Right Button
+          </button>
+          </a> 
+
+  <a href="hhhdddd"
+    <button class="new-three"id="newThree"
+              >Right Button</button>
+              </a> 
+              
+<a href="hhhdddd"
+    <button class="new-four"id="newFour"
+              >Right Button</button>
+              </a> 
+                    
+              
+       <a href="hhhdddd"
+    <button class="new-five"id="newFive"
+              >Right Button</button>
+              </a> 
+
+              </div>
+              
+ 
+  <br><br><br><br><br>
+  
+  <h2 id="interTitle">Internet</h2>
+  
+  
+  
+  
+  
+    <div class="last-scroll">
+    
+    
+    
+  
+  <a href="https://www.jw.org">
+       <button class="jw-website-button"id="jwwebsiteButton">
+         <img src="data:image/png;base64,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">
+         <br id="jwwebsiteText">
+         Official website 
+         </button>
+        </a> 
+  
+    
+         <a href="https://www.jw.org/en/library/videos/#en/categories/VODStudio">
+         <button class="jw-broadcasting-button"id="jwbroadButton">
+           <img src="https://www.catalyzex.com/_next/image?url=https%3A%2F%2Fui-avatars.com%2Fapi%2F%3Fname%3DJie%20Wu%26background%3DBCBCBC%26color%3D3E3E3F%26size%3D256%26bold%3Dtrue%26font-size%3D0.5%26format%3Dpng&w=256&q=75">
+           <br id ="jwbroadText">
+           Jw broadcasting 
+         </button>
+       </a> 
+         
+
+           <a href="https://wol.jw.org/wol/finder?wtlocale=E">
+           <button class="online-library-button"id="onlinelibraryButton">
+             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEWFncn///95lMV4lcN/mcfH0eXM1eRzkMLCzuN/mcZ+mMjM1eZrjL9ti8B5lcR9m8jj6fBvisJsBu8qAAABYklEQVR4nO3by3KDIBiAUUvQXExi8v4v26naTkktboKk0/Mt/4HB4xqaRpIkSZIkSZIkSZIkSZKkv9p1l+k6LxrC92kYlvfO02M6Pc7j3Dlfe0sA37JNxNil0y4u7g3j9NSn0/40jkP+oFBMuMsfPP3b2KbTNi7uDbnFhISEhISEhISEhIS/dw4f7Q/p9LAfx+eHxZfc4suLCjeLkJCwfoSEhPUjJCSsHyEhYf0ICQnrR0hIWD9CQsL6ERIS1o+Q8D8LV25Bb1Y54dC1Y7dKstt0fB+LCZs4Ftr1jylSe50+oBzw01lNWN5GSEj4MsJu/WOKNL8Z2qD57dbjdcNy3dN3X5u1cgv0iRV8rUZISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEj4g7hVtYCSJEmSJEmSJEmSJEmSJD27dz7LRc/4U64NAAAAAElFTkSuQmCC">
+             <br id="libraryText">
+             Watchtower online <br> library 
+           </button>
+         </a> 
+         
+  
+  <a href="https://www.jw.org/en/library/videos/#en/categories/VODStudio">
+         <button class="donate-button"id="donateButton">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbsa2McZSeGBWRXjpo7lcj8QBSSWACKmJoe1L_B8FgGw&s">
+           <br id="donateText">
+           Donate 
+         </button>
+       </a> 
+
+  </p>
+  
+  
+  
+  
+  <a href="https://www.jw.org/en/library/videos/#en/categories/VODStudio">
+         <button class="help-button"id="helpButton">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG12P-QBkD8sqiBde2idkLWNMIWZYdvy0C_Q&usqp=CAU">
+           <br id="helpText">
+           Help 
+         </button>
+       </a> 
+         
+         
+     </button>
+     </div>
+  
+  
+  
+
+  <button class="language-button">
+    <select id="options" name="options" onchange="handleSelection()">
+      <option value="en">English</option>
+      <option value="fr">French</option>
+      <option value="es">Spanish</option>
+         </select>
+        </button>
+     
+        
+  </div>
+  
+
+
+<div class="bottom-cont" id="btcont">
+
+       <a href="index.html">
+         <button class="home"id="hme">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jJ_d-0JarQb1V9ae0rzASBwTMOlXbyBWPz8rhAuPDA&s">           
+             <p id="homeText"> Home </p>
+          </button>
+        </a> 
+                  
+ 
+     <a href="bible.html">
+       <button class="bible" id="bibl">  
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc--43l0zCP88sU9t1Jl7k1cfUEv6l55MNpi2g-fBYxQ&s">     
+            <p id="bibleText"> Bible </p> 
+         </button>
+     </a>
+
+       <a href ="library.html">
+         <button class="library" id="lbry">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8djLAgm3v2zY65Xe9A2g2Gl1zD3bNGG4IjU0eRHrA2A&s">               
+              <p id="libryText"> Library </p>
+           </button>
+        </a>
+
+    <a href="meetings.html">
+      <button class="meetings" id="meeting">
+        <img src="https://cms-imgp.jw-cdn.org/img/p/802013111/univ/art/802013111_univ_cnt_5_md.jpg">     
+           <p id="meetingsText"> Meetings </>
+        </button>
+     </a>
+
+     <a href="personalstudy.html">
+       <button class="personal" id="study">
+         <img src="https://i.pinimg.com/75x75_RS/e2/96/37/e296379110c7cdf49020d9f5eb5f84e6.jpg">     
+            <p id="studyText"> Personal Study </p>
+         </button>
+    </div>
+  
+  
+   <!--
+         <button class="was-button">Right Button</button>
+           </a>
+  
+    
+         <a href="hhhddhdd"
+     <button class="new-button">Left Button</button>
+    </a> 
+    
+         <a href="tttt"      
+          <button class="neww-button">Right Button</button>
+          </a> 
+
+  <a href="hhhdddd"
+              <button class="neww-button-duplicate ">Right Button</button>
+              </a> 
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  -->
+  
+  
+  
+    <script >
+   
+                    // Wait for the page to load
+window.onload = function() {
+    // Hide loading screen after 5 second
+    setTimeout(() => {
+        document.getElementById('loading-screen').style.display = 'none';
+      //document.getElementById('showcase').classList.remove('hidden');
+    }, 1000);
+};
+ 
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+    // Translation dictionary
+const translations = {
+  en: {
+    homeTitle: "Home",
+    dailyTextButton: "Daily text",
+    faveTitle: "Favourite",
+    faveButton: "Add to favourite",
+    toolboxTitle: "Teaching toolbox",
+    whatsnewTitle: "What's new",
+    interTitle: "Internet",
+    jwwebsiteText: "Official website",
+    jwbroadText: "JW Broadcasting",
+    libraryText: "Online library",     
+    helpText: "Help",
+    donateText: "Donate",
+    leftButtonText: "Why study the bible?",
+    whaoneText: "The Watchtower, January 2025 \nStudy Articles for March 3 to April 6 \n\n\n\n\n\nEnglish • 8 days ago"
+  },
+  
+  
+  
+  /*The Watchtower, January 2025 <br> <strong>Study Articles for march 3 to April 6</strong>
+         
+         <br><br><br><br><br><br>
+           English • 8 days ago*/
+  
+  fr: {
+    homeTitle: "Accueil",
+    dailyTextButton: "Texte du jour",
+    faveTitle: "Favoris",
+    faveButton: "Ajouter aux favoris",
+    toolboxTitle: "Boîte à outils pédagogique",
+    whatsnewTitle: "Nouveautés",
+    interTitle: "En ligne",
+    jwwebsiteText: "Site officiel",
+    jwbroadText: "JW Broadcasting",
+    libraryText: "Bibliothèque en ligne",     
+    helpText: "Aide",
+    donateText: "Faire un don",
+    leftButtonText: "Pourquoi étudier la Bible?",
+    whaoneText:"La Tour de Garde, janvier 2025  \n Articles d'étude du 3 mars au 6 avril \n\n\n\n\n\ Anglais • il y a 8 " 
+  },
+  
+  es: {
+    homeTitle: "Inicio",
+    dailyTextButton: "Texto diario",
+    faveTitle: "Favoritos",
+    faveButton: "Agregar a favoritos",
+    toolboxTitle: "Caja de herramientas de \n enseñanza",
+    whatsnewTitle: "Novedades",
+    interTitle: "Internet",
+    jwwebsiteText : "Sitio oficial",
+    jwbroadText: "JW Broadcasting",
+    libraryText: "Biblioteca en línea",     
+    helpText: "Ayuda",
+    donateText: "Donar",
+    leftButtonText: "¿Por qué estudiar la Biblia?",
+    whaoneText: "La Atalaya, enero de 2025 \nArtículos de estudio del 3 de marzo al 6 de abril \n\n\n\n\n\nInglés • Hace 8 días"
+  },
+
+  // Add other translations here for Italian, Polish, etc.
+  // ...
+};
+
+
+
+    function handleSelection() {
+      const language = document.getElementById('options').value;
+      const translation = translations[language];
+
+      if (translation) {
+        document.getElementById('homeTitle').innerText = translation.homeTitle;
+        document.getElementById('dailyTextButton').innerText = translation.dailyTextButton;
+        document.getElementById('faveTitle').innerText = translation.faveTitle;
+        document.getElementById('faveButton').innerText = translation.faveButton;
+        document.getElementById('toolboxTitle').innerText = translation.toolboxTitle;
+        document.getElementById('interTitle').innerText = translation.interTitle;
+        document.getElementById('whatsnewTitle').innerText = translation.whatsnewTitle;
+        
+document.getElementById('jwbroadText').innerText = translation.jwbroadText;
+
+        
+document.getElementById('libraryText').innerText = translation.libraryText;
+        
+  document.getElementById('donateText').innerText = translation.donateText;
+  
+  document.getElementById('helpText').innerText = translation.helpText;
+  
+document.getElementById('jwwebsiteText').innerText = translation.jwwebsiteText;
+        
+document.getElementById('leftButtonText').innerText = translation.leftButtonText;
+        
+ document.getElementById('whaoneText').innerText = translation.whaoneText;
+        
+/*document.getElementById('officialButton').innerText = translation.officialButton;
+        
+document.getElementById('officialButton').innerText = translation.officialButton;
+        
+document.getElementById('officialButton').innerText = translation.officialButton;*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+      }
+    }
+
+
+
+
+
+
+function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = event.currentTarget.nextElementSibling;
+    dropdown.classList.toggle("show");
+}
+
+// Close the dropdown if clicked outside
+window.onclick = function(event) {
+    if (!event.target.matches('.menu-button')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+};
+
+
+
+</script>
+  
+  <script src="script.js">
+  
+</body>
+</html>
