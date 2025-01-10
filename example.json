@@ -1,0 +1,28 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "city": "New York",
+    "is_student": false,
+    "hobbies": [
+        "reading",
+        "hiking",
+        "cooking"
+    ],
+    "favorite_color": "blue",
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+    },
+    "friends": [
+        {
+            "name": "Jane Doe",
+            "age": 28
+        },
+        {
+            "name": "Bob Smith",
+            "age": 32
+        }
+    ]
+}
