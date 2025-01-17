@@ -1,0 +1,56 @@
+{
+    "opening": {
+        "mDate": "JANUARY 13-19",
+        "mDateAbbr": "JAN 13-19",
+        "mVerse": "Psalms 135-137",
+        "mSong1": "Song 2",
+        "chairman": "Bro.Taye Ekunode"
+    },
+    "treasuresFGW": {
+        "treasuresOne": "Our Lord Is Greater Than All Other Gods",
+        "treasuresOneHandler": "Bro Beshel Ashipu",
+        "treasuresOneImg": "#",
+        "spiritualGems": "Bro Calvin Uzor",
+        "bibleReader": "Bro Nelson Ojebor"
+    },
+    "applyUrselfFM": [{
+        "assignHeading": "Starting a Conversation",
+        "assignTime": "3 min",
+        "assignType": "HOUSE TO HOUSE",
+        "assignedTo": "Sis Charlotte Gabielesin",
+        "assignedPartner": null,
+        "assignedHouseHolder": "Sis Ranti Okosun"
+    },
+        {
+            "assignHeading": "Following Up",
+            "assignTime": "4 min",
+            "assignType": "HOUSE TO HOUSE",
+            "assignedTo": "Sis Teniola Bolomope",
+            "assignedPartner": "Sis Vera Bolomope",
+            "assignedHouseHolder": "Sis Cherish Christian"
+        },
+        {
+            "assignHeading": "Explaining Your Beliefs",
+            "assignTime": "5 min",
+            "assignType": "DEMONSTRATION",
+            "assignedTo": "Sis Joy Onyekwe",
+            "assignedPartner": "Sis Chantel Gabielesin",
+            "assignedHouseHolder": "Sis Rose Mark"
+        }],
+
+    "livingAsCh": {
+        "mSong2": "Song 10",
+        "lTalk1": "Circuit Assembly Review",
+        "lTalk1Handler": "Bro Kayode Olakojo",
+        "lTalk1Time": "15 min",
+        "lTalk2": null,
+        "lTalk2Handler": null,
+        "lTalk2Time": null,
+        "congBsHandler": "Bro Olamide Bolomope",
+        "congBsReader": "Bro Jeremiah Ofodili"
+    },
+    "closing": {
+        "mSong3": "Song 90",
+        "cPrayer": "Bro Amaefula"
+    }
+}
