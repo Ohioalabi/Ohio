@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/library.css">
+    <link rel="stylesheet" href="styles/publications.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/bottom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&family=Lilita+One&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Library</title>
+</head>
+<body>
+  
+  <h1 id="headTitle" style="font-size: 5em;"> Library </h1>
+  <strong id="lang" 
+           style="color: lightgray" >
+           English</strong>
+  
+
+       
+      <div class="head-container">
+        
+        <a href="library.html">
+           <button class="libraryMenu" id="public" style="border-bottom: 2px solid mediumpurple;">
+             <span id="pubText" class="libHeadText" style="color: mediumpurple; font-weight: 700;"> PUBLICATIONS</span>
+          </button>
+        </a>
+      
+      
+              <a href="video.html">
+                <button class="libraryMenu" id="video">
+                  <span id="vidText" class="libHeadText">VIDEO</span>
+               </button>
+            </a>
+      
+                <a href="#">
+                   <button class="libraryMenu" id="audio" onclick= fetchLibContent()>
+                     <span id="audText" class="libHeadText">AUDIO</span>
+                </button>
+            </a>
+      
+        
+                <a href="downloaded.html">
+                  <button class="libraryMenu" id="downloads">
+                    <span id="downText" class="libHeadText">DOWNLOADED</span>
+               </button>
+           </a>
+      
+        
+                <a href="updates.html">
+                  <button class="libraryMenu" id="updates">
+                    <span class="libHeadText" id="pendingText"> PENDING UPDATES</span>
+              </button>
+           </a>
+      
+      </div>
+  
+          <br>
+    
+     <div class="home-container" id="contDyna">
+         
+          <button class="publication" id="book" onclick= window.location.href="/storage/emulated/0/PDF/gpt/index.html">
+            <span class="material-symbols-outlined bk">book</span>                   
+              
+              <strong id="booksText" class="publicationText"> Books</strong>                   
+         </button>
+     </a>
+    
+    
+           
+        <button class="publication" id="bb">
+          <span class="material-symbols-outlined bb">book_4</span>        
+              <a href="tttthhh">  
+     					 <strong id="bandbText" class="publicationText">Brochures and Booklets</strong>                   
+    		</button>
+	  </a>
+              
+     
+             
+        <button class="publication" id="ti">
+           <span class="material-symbols-outlined ti">book_2</span>        
+              <a href="tttthhh">  
+   	   						<strong id="tandiText" class="publicationText">Tracts and Invitations</strong>                   
+    						</button>
+ 			 </a>
+              
+    
+     
+             
+            <button class="publication" id="series">
+             <span class="material-symbols-outlined as">article</span>                      
+   												   <a href="tttthhh">  
+              <strong id="articleText" class="publicationText">Article Series</strong>                   
+   							 </button>
+		  </a>
+                    
+    
+           
+        <button class="publication" id="wtower">
+           <span class="material-symbols-outlined watch">two_pager</span>        
+              <a href="homer">    
+    						  <strong id="wtText" class="publicationText">Watchtower</strong>                   
+   			 </button>
+		  </a>
+               
+    
+      
+         <button class="publication" id="awake">
+           <span class="material-symbols-outlined awake">exclamation</span>        
+       						   <a href="tttthhh">   
+           <strong id="awakText" class="publicationText">Awake!</strong>                   
+       </button>
+    </a>
+               
+    
+               
+        <button class="publication" id="work">
+           <span class="material-symbols-outlined mw">person_book</span>        
+              <a href="tttthhh">  
+           <strong id="meetText" class="publicationText">Meeting Workbooks</strong>                   
+  					  </button>
+  				</a>
+              
+    
+                  
+        <button class="publication" id="dom">
+          <span class="material-symbols-outlined km">remember_me</span>        
+              <a href="tttthhh">
+     								 <strong id="kingText" class="publicationText">Kingdom Ministry</strong>                   
+   							</button>
+				  </a>
+              
+    
+                
+        <button class="publication" id="grams">
+           <span class="material-symbols-outlined programs">schedule</span>        
+              <a href="tttthhh">  
+          <strong id="proText" class="publicationText">Programs</strong>                   
+       </button>
+   </a>
+               
+    
+              
+         <button class="publication" id="dex">
+           <span class="material-symbols-outlined index">book_3</span>        
+              <a href="tttthhh">    
+          <strong id="inText" class="publicationText">Index</strong>                   
+  		  </button>
+  	</a>
+              
+    
+               
+           <button class="publication" id="lines">
+             <span class="material-symbols-outlined guidelines">checklist</span>        
+               <a href="tttthhh"> 
+           <strong id="guideText" class="publicationText">Guidelines</strong>                   
+      </button>
+   </a>
+                           
+    
+          
+          <button class="publication" id="releases">
+           <span class="material-symbols-outlined cr">stadium</span>        
+             <a href="tttthhh"> 
+          <strong id="convText" class="publicationText">Convention Releases</strong>                   
+     </button>
+  </a>
+              
+          <br><br><br><br><br><br><br>
+         
+        
+    </div>
+  <hr>
+        
+        
+      
+      
+    
+  
+  
+  
+  
+<div class="bottom-cont" id="btcont">
+
+         <a href="index.html">
+         <button class="bottomNav" id="hme">
+           <span class="material-symbols-outlined home">
+             &#xe88a</span><br>           
+             <span class="bottomNavText" id="homeText"> Home </span>
+          </button>
+        </a> 
+                  
+ 
+     <a href="bible.html">
+       <button class="bottomNav" id="bibl">  
+         <span class="material-symbols-outlined bible">&#xe0e0</span>            
+         <br>  <span id="bibleText" class="bottomNavText"> Bible </span> 
+         </button>
+     </a>
+
+       <a href ="library.html">
+         <button class="bottomNav" id="lbry">
+         <span class="material-symbols-outlined library" style="color: mediumpurple">&#xf570</span>              
+           <br>    <span id="libryText" class="bottomNavText"> Library </span>
+           </button>
+        </a>
+
+    <a href="meetings.html">
+      <button class="bottomNav" id="meeting">
+       <span class="material-symbols-outlined meetings">&#xf7fb</span>       
+        <br> <span id="meetingsText" class="bottomNavText"> Meetings </span>
+        </button>
+     </a>
+
+    <a href="meetings.html">
+      <button class="bottomNav" id="study">
+       <span class="material-symbols-outlined meetings">&#xead5</span>       
+        <br> <span id="meetingsText" class="bottomNavText"> Personal Study </span>
+        </button>
+     </a>
+       
+    </div>
+  
+   
+  
+  
+  
+  
+  <script src="scripts/dynaFetch.js"></script>
+  <script src="scripts/theme.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
