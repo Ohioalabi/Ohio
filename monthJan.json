@@ -1,5 +1,6 @@
 {
     "month": "JANUARY",
+    "isFiveWeeks": false,
     "wkndDate": {
         "wkdDate1": "Sunday 5",
         "wkdDate2": "Sunday 12",
@@ -24,6 +25,12 @@
         "spk3": "Bro Toyin Gabielesin",
         "spk4": "Bro Taye Ekunode"
     },
+    "publicTalk": {
+        "pTalk1": "Unavailable",
+        "pTalk2": "Unavailable",
+        "pTalk3": "Unavailable",
+        "pTalk4": "Unavailable"
+    }
     "watchTwr": {
         "reader1": "Bro Jeremiah Ofedili",
         "reader2": "Bro Oiseomoede Alabi",
