@@ -1,0 +1,476 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry</title>
+    
+    <style>
+html {
+  color: white;
+}
+
+body {
+  background-color: #444;
+  height: 100vh;
+}
+
+#op {
+  padding: 10px;
+  background-color: skyblue;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: solid transparent;
+}
+.firstOp {
+  display: none;
+  margin: 25px;
+}
+ .seShp {
+   height: 50px;
+   width: 100w;
+   align-items: center;
+   margin: 25px;
+ }
+.seShp span {
+  font-weight: 800;
+  color: white;
+  font-size: 1.2rem;
+}
+select {
+  color: aliceblue;
+  height: 50px;
+  outline: none;
+  color: cornflowerblue;
+  font-weight: 800;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  background: transparent;
+}
+
+select:hover {
+  border: cornflowerblue 2px solid;
+  background: transparent;
+}
+
+#rectForm {
+  align-items: center;
+  height: 200px;
+  width: 100vw;
+  background: #777;
+  display: flex;
+}
+#rectForm input[type = number] {
+  color: white;
+  height: 50px;
+  width: 50px;
+  background: lightgray;
+  border: 2px solid white;
+  outline: none;
+  margin-left: 30px;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  border-radius: 50px
+}
+#numIII {
+  display: none;
+}
+#rectForm input[type = number]:focus {
+  border: cornflowerblue 4px solid
+}
+#rectForm input[type = number]:disabled {
+  border-color: lightgreym;
+  color: gray
+}
+#rectForm input[type = submit] {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 150px;
+  border-radius: 10px;
+  border: 1px solid transparent
+}
+
+.result {
+  color: white
+}
+.result.noShape {
+  color: red;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+#set {
+  background: darkgray;
+  color: #fff;
+  width: 90vw;
+  height: 150px;
+  position: fixed;
+  top: 250px;
+  left: 20px;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px #000;
+}
+.setOps {
+  margin-top: 50px
+}
+.hd4 {
+  color: darkblue;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+#swtTxt {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+#cl {
+  padding: 10px;
+  background-color: red;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin-top: 10px;
+  margin-left: 200px;
+  border: solid transparent;
+}
+
+    </style>
+    
+    
+    
+    
+<body>
+    <button id="op">Settings</button>
+    <div id="set">
+        <div class="setOps">
+            <span class="hd4">select mode</span><br>
+            <label>                
+                <span id="swtTxt">Show option listing</span>
+                <input type="checkbox" id="chMode">                    
+                </label>
+        </div>
+        <button id="cl">close</button>
+    </div>
+
+    
+    <form class="firstOp">
+        <div style="display: flex; flex-direction: column; width: 30%">
+            <label for="r1">Rectangle</label>
+														<label for="r2" style="margin-top: 10px;">Square</label>
+												  <label for="r3" style="margin-top: 10px;">Circle</label>        
+												  <label for="r4" style="margin-top: 10px;">Triangle</label>    
+												  <label for="r5" style="margin-top: 10px;">Parallelogram</label>
+														<label for="r6" style="margin-top: 10px;">Trapezium</label>            
+           </div>
+        <div style="display: flex; flex-direction: column; width: 8%">                
+															<input type="radio" id="r1" name="selectShape" value="rect">            
+             <input type="radio" id="r2" name="selectShape" value="sqr" style="margin-top: 10px;">
+												   <input type="radio" id="r3" name="selectShape" value="cir" style="margin-top: 10px;">
+												   <input type="radio" id="r4" name="selectShape" value="tri" style="margin-top: 10px;">
+															<input type="radio" id="r5" name="selectShape" value="para" style="margin-top: 10px;">             
+             <input type="radio" id="r6" name="selectShape" value="trape" style="margin-top: 10px;">             
+        </div>            
+    </form>
+    
+    <div class="seShp">
+    <span>Select Shape</span>
+    <select name="selectShape">
+        <option value="selectShape" selected="true">select shape</option>
+        <option value="rect">Rectangle</option>
+        <option value="sqr">Square</option>
+        <option value="cir">Circle</option>
+        <option value="tri">Triangle</option>
+        <option value="para">Parallelogram</option>
+        <option value="trape">Trapezium</option>
+    </select>
+    </div>
+    
+    <form id="rectForm">
+     <input type="submit" value="solve">
+    <input type="number" id="numI" name="noI" required="true" min="1" placeholder="0">
+     <input type="number" id="numII" name="noII" required="true" min="1" placeholder="0">
+     <input type="number" id="numIII" name="noIII" required="true" min="1" placeholder="0">
+    </form>
+    
+    <div id="result" class="result"></div>
+</head>
+
+    
+    
+    
+    
+    <script>
+    
+    
+    const numI = document.getElementById("numI");
+const numII = document.getElementById("numII");
+const numIII = document.getElementById("numIII");
+const sub = document.querySelector("#sub");
+const result = document.querySelector("#result");
+const rectForm = document.querySelector("#rectForm");
+const radioBtn = document.querySelectorAll("input[name = selectShape]");
+const selectBtn = document.querySelector("select[name = selectShape]");
+const chMode = document.getElementById("chMode");
+const opBox = document.querySelector(".seShp");
+const firstOp = document.querySelector(".firstOp");
+const clSet = document.getElementById("cl");
+const opSet = document.getElementById("op");
+const set = document.getElementById("set");
+const switchText = document.getElementById("swtTxt");
+
+
+
+
+class Shape {
+    constructor(type) {;
+        this.type = type;
+    }
+    getType() {
+        return `${this.type}`;
+    }
+
+}
+
+class Rectangle extends Shape {
+    constructor(length, breadth) {
+        super("Rectangle");
+        this.len = length;
+        this.breadth = breadth;
+    }
+
+    getArea() {
+        return `Area: ${this.len * this.breadth}`;
+    }
+    getPerimeter() {
+        return `Perimeter: ${2 * (this.len + this.breadth)}`;
+    }
+}
+
+class Square extends Shape {
+    constructor(l) {
+        super("Square");
+        this.l = l;
+    }
+    getArea() {
+        return `Area: ${this.l ** 2}`;
+    }
+    getPerimeter() {
+        return `Perimeter: ${4 * this.l }`;
+
+    }
+}
+
+class Circle extends Shape {
+    constructor(r) {
+        super("Circle");
+        this.r = r;
+    }
+    getArea() {
+        return `Area: ${(Math.PI * this.r ** 2).toFixed(3)} `;
+    }
+    getCircumference() {
+        return `Circumference: ${(2 * Math.PI * this.r).toFixed(3)} `;
+    }
+}
+
+class Triangle extends Shape {
+    constructor(b, h) {
+        super("Triangle");
+            this.b = b;
+            this.h = h;
+        }
+        getArea() {
+            return `Area: ${ 0.5 * (this.b * this.h)} `;
+        }
+    }
+
+class Parallelogram extends Shape {
+    constructor(b, h) {
+        super ("Paralellogram");
+            this.b = b;
+            this.h = h;
+        }
+        getArea() {
+            return `Area: ${this.b * this.h} `;
+        }
+        getPerimeter() {
+            return `Perimeter: ${2 * (this.b + this.h)}`;
+    }
+}
+
+class Trapezium extends Shape {
+    constructor(a, b, h) {
+        super ("Trapezium");
+        this.a = a;
+        this.b = b;
+        this.h = h;
+        }
+        getArea() {
+            return `Area: ${0.5 * (this.a + this.b) * this.h} `;
+        }
+}
+
+numIII.disabled = true;
+function changes(event) {
+    const selectedShape = event.target.value;
+    
+   if (selectedShape == "trape") {
+       numIII.disabled = false;
+        numIII.style.display = "block";
+    } else {
+        numIII.disabled = true;
+        numIII.style.display = "none";
+    }
+    
+    switch (selectedShape) {
+        case "rect":
+        result.textContent = " ";
+        numII.disabled = false;
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const value2 = parseInt(numII.value.trim());
+                const rect = new Rectangle(value1, value2);
+                result.innerHTML = `
+                <h2>${rect.getType()}</p>
+                <p>${rect.getArea()}</p>
+                <p>${rect.getPerimeter()}</p>
+            `;
+        });
+        break;
+        case "sqr":
+        result.textContent = " ";
+        numII.disabled = true;
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const sqr = new Square(value1);
+            result.innerHTML = `
+            <h2>${sqr.getType()}</p>
+            <p>${sqr.getArea()}</p>
+            <p>${sqr.getPerimeter()}</p>
+            `;
+        });
+        break;
+       case "cir":
+        result.textContent = " ";
+        numII.disabled = true;
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const cir = new Circle(value1);
+            result.innerHTML = `
+            <h2>${cir.getType()}</p>
+            <p>${cir.getArea()}</p>
+            <p>${cir.getCircumference()}</p>
+            `;
+        });
+        break;
+        case "tri":
+        result.textContent = " ";
+        numII.disabled = false;
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const value2 = parseInt(numII.value.trim());
+            const tri = new Triangle(value1, value2);
+            result.innerHTML = `
+            <h2>${tri.getType()}</p>
+            <p>${tri.getArea()}</p>
+            `;
+        });
+        break;
+        case "para":
+        result.textContent = " ";
+        numII.disabled = false;
+        numIII.style.display = "none";
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const value2 = parseInt(numII.value.trim());
+            const para = new Parallelogram(value1, value2);
+            result.innerHTML = `
+            <h2>${para.getType()}</p>
+            <p>${para.getArea()}</p>
+            <p>${para.getPerimeter()}</p>
+            `;
+        });
+        break;
+        case "trape":
+        result.textContent = " ";
+        numII.disabled = false;
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.classList.remove("noShape");
+            const value1 = parseInt(numI.value.trim());
+            const value2 = parseInt(numII.value.trim());
+            const value3 = parseInt(numIII.value.trim());
+            const trape = new Trapezium(value1, value2, value3);
+            result.innerHTML = `
+            <h2>${trape.getType()}</p>
+            <p>${trape.getArea()}</p>
+            `;
+        });
+        break;
+        default:
+        rectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            result.textContent = "Please Select a Shape";
+            result.classList.add("noShape");
+        });
+    }
+}
+rectForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    result.textContent = "Please Select a Shape";
+    result.classList.add("noShape");
+});
+
+chMode.checked = false;
+selectBtn.addEventListener("change", changes);
+
+chMode.addEventListener("change", () => {
+if (chMode.checked) {
+    opBox.style.display = "none";
+    firstOp.style.display = "flex";
+    switchText.textContent = "Hide option listing";
+    radioBtn.forEach(radioBtn => {
+    radioBtn.addEventListener("change", changes);
+});
+    
+} else {
+    firstOp.style.display = "none";
+    opBox.style.display = "block";
+    switchText.textContent = "Show option listing";
+    selectBtn.addEventListener("change", changes)
+}
+});
+
+
+opSet.addEventListener("click", () => {
+    set.style.display = "flex";
+});
+clSet.addEventListener("click", () => {
+    set.style.display = "none";
+});
+
+
+    
+    
+    
+    </script>
+</body>
+</html>
