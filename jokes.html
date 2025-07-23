@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Feeling Bored?</title>
+  <style>
+    body { 
+      background-color: lightgray;
+      height: 100vh;
+      width: 100vw;
+      font-size: 50%;
+    }
+  #homeTitle {
+    font-size: 2.5rem;
+  }
+
+  #set {
+    font-size: 1rem;
+    border-radius: 3px 20px 3px 20px;        
+  }
+  #modes {
+    position: relative;
+    width: 50vw;
+    height: 10vh;
+    display: block;
+    background-color: transparent;
+    top: 0%;
+    right: -50%;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px 3px 20px 3px;
+border: 1px none
+  }
+  .mode {
+    height: 100%;
+    border: none;
+    border-radius: 20px 3px 20px 3px;
+  }
+  #mode2 {
+    border-radius: 3px 20px 3px 20px;
+  }
+    .jkBox { /*Daily text*/
+      height: 35vh;
+      width: 98%;
+      background-color: white;
+      border: none;      
+      color: purple;
+      align-content: center;
+          }
+#joke {
+  font-size: 1.5rem;
+  text-align: center; 
+  font-weight: 700;
+  
+}
+  @keyframes fade {
+    from {
+      opacity: 0;
+    } 
+    to {
+      opacity: 1;
+    }
+  }
+ .bu {
+   font-size: 1.5rem;
+   margin-left: 79%;
+   border-radius: 20px 3px 20px 3px;
+   border: 5px double purple;
+   background-color: transparent;
+   color: darkolivegreen;
+   font-weight: 600;
+   margin-top: 0%;
+ }  
+  .bu:active {
+    background-color: rgba(160, 150, 143, 5);
+  }
+  .bu:disabled {
+    background-color: rgba(160, 150, 143, 5);
+    color: darkgrey;
+border: 5px double grey;
+  }
+  #copy {
+    background-color: rgba(160, 150, 143, 5);
+    border: solid transparent;
+    border-radius: 3px 15px 3px 15px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  
+  <h1 id="homeTitle">Jokes</h1>
+  
+
+  
+    <select name="mode">
+        <option value="manual" selected="true">Manual Control</option>
+        <option value="auto">Auto Control</option>
+    </select>
+  
+  <div class="jkBox" id="jkB">
+    <p id="joke">Loading...</p>
+  </div>
+  
+  <button id="copy">Copy</button>
+  <button class="bu" id="next">Next</button>
+  
+  
+  <script>
+  
+  const modes = document.getElementById('modes');
+const modeButton = document.getElementById('set');
+const out = document.getElementById('jkB');
+const auto = document.getElementById('mode1');
+const manual = document.getElementById('mode2');
+const jokes = document.getElementById('joke');
+const nxt = document.querySelector("#next");
+const copy = document.querySelector("#copy");
+const selectBtn = document.querySelector("select[name = mode]");
+
+let autoInterval = null; // To store the interval ID for auto mode
+
+// Show/Hide Modes Dropdown
+function changes(e) {
+  const selectedMode = e.target.value;
+
+    if (selectedMode == 'manual') {      
+      nxt.textContent = 'Next';
+      nxt.disabled = false; // Enable "Next" button for manual mode
+      manually();
+    } else {
+      automate(); // Start auto mode
+      nxt.textContent = 'Auto';
+      nxt.disabled = true; // Disable manual "Next" button in auto mode
+    }
+}
+selectBtn.addEventListener("change", changes)
+
+
+
+// Auto Mode
+/*auto.addEventListener('click', () => {
+    modes.style.display = 'none'; 
+    modeButton.textContent = 'Auto';
+    
+});
+
+// Manual Mode
+manual.addEventListener('click', () => {
+    modes.style.display = 'none'; 
+    modeButton.textContent = 'Manual';
+//  jokes.style.animation = 'fade 1s';
+});
+*/
+// Fetch and Display a Random Joke
+async function fetchRandomJoke() {
+    const url = "https://official-joke-api.appspot.com/random_joke";
+
+    try {
+        let response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+
+        let joke = await response.json();
+        jokes.style.color = 'black';
+        jokes.textContent = `${joke.setup} - ${joke.punchline}`;
+        copy.style.display = 'block';
+     jokes.style.animation = "none"; 
+  void jokes.offsetWidth; // Trigger reflow to reset the animation
+  
+  // Reapply the animation
+  jokes.style.animation = "fade 1s";
+    } catch (error) {
+        jokes.style.color = 'red';
+        jokes.textContent = "Check your internet connection and try again";
+        console.error("Error fetching a joke:", error.message);
+        copy.style.display = 'none';
+    }
+}
+
+// Manual Mode Functionality
+function manually() {
+    // Clear auto mode if it was running
+    if (autoInterval) {
+        clearInterval(autoInterval);
+        autoInterval = null;
+    }
+
+    nxt.addEventListener("click", () => {
+  fetchRandomJoke();
+});
+}
+
+// Auto Mode Functionality
+function automate() {
+    // Clear any existing interval
+    if (autoInterval) {
+        clearInterval(autoInterval);
+    }
+
+    // Start auto mode (fetch a joke every 5 seconds)
+    autoInterval = setInterval(fetchRandomJoke, 8000);
+}
+
+// Copy Joke to Clipboard
+copy.addEventListener('click', () => {
+    const jokeText = jokes.textContent;
+    navigator.clipboard.writeText(jokeText).then(() => {
+        alert("Joke copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
+    });
+});
+
+// Initial Joke Fetch
+fetchRandomJoke();
+  
+  manually();
+  
+  
+  
+  
+  
+  
+  
+/*  const modes = document.getElementById('modes');
+  const modeButton = document.getElementById('set');
+  const out = document.getElementById('jkB');
+  const auto = document.getElementById('mode1');
+  const manual = document.getElementById('mode2');
+
+ function showModes() {    
+    if (modes.style.display = 'none') {
+      modes.style.display = 'flex'; 
+    } else if (modes.style.display = 'flex') {
+      modes.style.display = 'none';
+    }
+  }
+  
+  out.addEventListener('click', () => {
+    if (modes.style.display = 'flex') {
+      modes.style.display = 'none'; 
+    } 
+  });
+  
+  
+   auto.addEventListener('click', () => {
+          modes.style.display = 'none'; 
+    set.textContent = 'Auto';
+     nxt.textContent = 'Auto';
+     set.style.fontSize = '1.2rem';
+     nxt.disabled = true;
+     automate()
+  });
+  
+  manual.addEventListener('click', () => {
+         modes.style.display = 'none'; 
+    set.textContent = 'Manual'
+    set.style.fontSize = '1rem';
+    nxt.textContent = 'Next';
+    manually();
+  });
+  
+  
+  
+  
+ const jokes = document.getElementById('joke');
+ const nxt = document.querySelector("#next");
+const copy = document.querySelector("#copy");
+  
+    async function fetchRandomJoke() {
+    const url = "https://official-joke-api.appspot.com/random_joke";
+
+    try {
+        let response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+                   
+        }
+
+        let joke = await response.json();
+        console.log("Here's a random joke:");
+        jokes.textContent = `${joke.setup} - ${joke.punchline}`;
+      console.log(`${joke.setup} - ${joke.punchline}`);
+      copy.style.display = 'block';
+      
+     
+    } catch (error) {
+      jokes.style.color = 'black';
+    jokes.textContent = "Check your internet connection and try again";
+        console.error("Error fetching a joke:", error.message);
+      copy.style.display = 'none';
+    }
+      
+       // Add click event to copy the joke to the clipboard
+        copy.addEventListener('click', () => {
+            const jokeText = jokes.textContent;
+            navigator.clipboard.writeText(jokeText).then(() => {
+                alert("Joke copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });           
+        });
+               
+    }
+
+fetchRandomJoke();
+  
+  
+  
+  
+  
+  function manually() {
+  // another
+  nxt.addEventListener("click", async () => {
+    try {
+        let response = await fetch("https://official-joke-api.appspot.com/random_joke");
+        if (!response.ok) {
+            throw new Error("Failed to fetch a joke");
+        }
+
+        let joke = await response.json();
+      jokes.style.color = 'purple';
+      jokes.textContent = `${joke.setup} - ${joke.punchline}`;
+      //  document.querySelector("#jokeDisplay").innerText = `${joke.setup}\n\n${joke.punchline}`;
+      copy.style.display = 'block';
+            
+          
+    } catch (error) {
+      jokes.style.color = 'red';
+      jokes.textContent = `Something went wrong`;
+        //document.querySelector("#jokeDisplay").innerText = "Error fetching a joke.";
+      console.error("Error fetching a joke:", error.message);
+      copy.style.display = 'none';
+    }
+    
+    
+     // Add click event to copy the joke to the clipboard
+        copy.addEventListener('click', () => {
+            const jokeText = jokes.textContent;         
+            navigator.clipboard.writeText(jokeText).then(() => {
+                alert("Joke copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });            
+        });
+    
+    
+  });
+  
+  }
+  
+  
+  
+   
+  function automate() {
+    const time = setInterval( 
+    fetchRandomJoke()
+  1000);
+    
+    
+  }
+  */
+  
+  </script>
+  
+</body>
+</html>
