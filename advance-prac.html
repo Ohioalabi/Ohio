@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT WEEK 7</title>
+</head>
+<body>
+  
+  <style>
+  
+  body {
+  height: 100vh;
+  width: 100vw;
+}
+ .input-container {
+      position: relative;
+      margin-bottom: 40px;
+    }
+ .error-message {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      color: red;
+      font-size: 15px;
+      margin-top: 5px;
+   margin-left: 50px;
+   visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+input[type="number"] {
+      width: 50%;
+     padding: 5px;
+      font-size: 16px;
+      border: 3px dotted #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+input:focus {
+  border-color: green;
+}
+input.error {
+      border-color: red;
+    }
+ .error-message.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+
+
+
+.batteryBox {
+  width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border-top: 2px solid green;
+      border-bottom: 2px solid green;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      background-color: transparent;
+      animation: spin 0.6s linear infinite;
+      display: block;
+      position: absolute;
+      top: 32px;
+      left: 15%;
+}
+
+ /* Switch container */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+.dark-theme #batT {
+  color: chartreuse;
+  font-weight: 800;
+  background-color: rgba(000, 885, 000, 0.4); /* Medium purple with 50% opacity */
+
+}
+
+
+    /* Hide the default checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider (switch knob) */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    /* The knob itself */
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s, background-color 0.3s;
+      box-shadow: 0px 0px 11px 0px rgba(0,0,0,1);
+
+    }
+
+    /* Checked state styles */
+    input:checked + .slider {
+      background-color: rgba(000, 250, 000, 0.6); /* Medium purple with 50% opacity */
+    }
+.dark-theme input:checked + .slider {
+      background-color: rgba(000, 225, 000, 1); /* Medium purple with 50% opacity */
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px); /* Move the knob to the right */
+      background-color: green
+    }
+.dark-theme input:checked + .slider:before {
+      transform: translateX(26px); /* Move the knob to the right */
+      background-color: darkgreen;
+    }
+.dark-theme input::placeholder {
+  color: black
+}
+
+    /* Optional: Dark mode styles */
+    body.dark-theme {
+      background-color: #121212;
+      color: white;
+    }
+
+
+/* Combine spin and pulse into one animation */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+        
+      }
+    }
+
+    .box6 {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border-top: 2px solid green;
+      border-bottom: 2px solid green;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      background-color: transparent;
+      animation: spin 0.6s linear infinite;
+      display: none;
+      position: absolute;
+      top: -20px;
+      left: 20%;
+      
+    }
+
+.prr {
+  display: flex;
+  position: relative;
+  height: 40px;
+  background-color: transparent
+}
+
+
+
+
+
+.snackBar {
+  position: fixed;
+  top: 70%;
+  left: 14%;
+  height: 6%;
+  width: 70%;
+  background-color: #333;
+  color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 100px;
+  align-content: center;
+  font-weight: 500;
+  /*display: none;*/
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.dark-theme .snackBar {
+  background-color: #fff;
+  color: #000;
+}
+.pop {
+  display: block;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Simple loading spinner */
+#loading {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin: 20px;
+}
+
+
+.sec {
+  background-color: khaki;
+  border-radius: 8px;
+  position: relative
+}
+.dark-theme .sec {
+  background-color: brown
+}
+
+#submit {
+  background-color: brown;
+  font-weight: 800;
+  padding: 5px 20px;
+  border-radius: 15px
+}
+
+.dark-theme .batteryBox, .dark-theme .box6 {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+  
+  </style>
+  
+  <h1>JAVASCRIPT WEEK 7</h1>
+  <h3>Asyncronous Functions / navigator methods</h3>
+  
+  <div class="sec">
+    <h5>This uses navigator methods to get the battery status:</h5>
+    <span id="bPercent">Loading battery info...</span><br>
+  <span id="bStatus">Getting battery status...</span>
+    <div class="batteryBox" id="bLoader"></div>
+  </div>
+  
+  <div class="sec">
+  <h2>Custom Switch Example</h2>
+  
+  <!-- Switch -->
+  <label class="switch">
+    <input type="checkbox" id="dark-mode-toggle">
+    <span class="slider"></span>
+  </label>
+  <p>Toggle the switch to enable or disable Dark Mode.</p>
+    <div class="input-container">
+  <label for="batT">Enter custom batter level to activate dark mode:</label>
+  <input type="number" id="batT" placeholder="E.g: 70">
+    <span id="error-message" class="error-message"></span>
+      <!--  <a href="#"><input type="button" value="Save" onclick= saved()></a><br><br>
+       --> <button id="submit" onclick= saved()>Save</button>
+
+    </div>
+  </div>
+  
+  <div class="sec">
+  <div class="prr">
+   <label class="switch">
+    <input type="checkbox" id="flash-light">
+    <span class="slider"></span>
+  </label>
+  <div class="box6" id="loading"></div>
+  </div>
+  <p>Toggle the switch to enable or disable Flashlight.</p>
+
+  </div>
+  
+  
+  
+  
+  
+  
+    <div class="snackBar" id="barSnack">
+    <span id="barMsg"></span>
+  </div>
+  <script>
+  
+  const msgPop = document.getElementById('barSnack');
+const msgBar = document.getElementById('barMsg');
+const setNo = document.getElementById('batT').value;
+const percent = document.getElementById('bPercent');
+const status = document.getElementById('bStatus');
+const bLoad = document.getElementById('bLoader');
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const bodyElement = document.body;
+
+    // Toggle dark mode class based on switch state
+    darkModeToggle.addEventListener('change', () => {
+      if (darkModeToggle.checked) {
+        bodyElement.classList.add('dark-theme'); // Enable dark mode
+        msgPop.classList.add('pop');
+        msgBar.textContent = "Dark mode activated";
+        setTimeout(() => {
+    msgPop.classList.remove('pop');
+  }, 5000);
+      } else {
+        bodyElement.classList.remove('dark-theme'); // Disable dark mode
+        msgPop.classList.add('pop');
+        msgBar.textContent = "Dark mode disactivated";
+        setTimeout(() => {
+    msgPop.classList.remove('pop');
+  }, 5000);
+      }
+    });
+function showMessage(message) {
+    msgPop.classList.add('pop');
+        msgBar.textContent = message;
+        setTimeout(() => {
+    msgPop.classList.remove('pop');
+  }, 5000);
+    
+}
+
+
+navigator.getBattery().then((battery) => {
+    bPercent.textContent = `${Math.round(battery.level * 100)}%`;
+user2 = localStorage.getItem('setNo', batT.value)
+const chTime = Math.round(battery.chargingTime / 3600);// battery.chargingTime / 3600
+const chTime1 = Math.round(battery.chargingTime / 3600);// battery.chargingTime / 3600
+    const chTimeInMins = Math.round(battery.chargingTime / 60);// chTime.toFixed(0); 
+    const barPercent = battery.level * 100;
+    
+    battery.addEventListener('levelchange', (change) => {
+bPercent.textContent = `${battery.level * 100}%`;
+ });
+    
+    
+    
+    
+    battery.addEventListener('chargingtimechange', (change) => {
+    //bStatus.textContent = `${chTime1.toFixed(0)}hrs until full`;
+        //bLoad.style.display = 'none';
+        console.log(`${chTimeInMins}mins until full`);
+    
+   /* if (battery.charging == true) {
+       //bStatus.textContent = `${chTime}hr until full`;
+        showMessage("Charging");
+          } else*/ if (battery.charging == true && barPercent == 100) {
+        bStatus.textContent = "Battery is fully charged";
+        bLoad.style.display = 'none';
+              showMessage("Charging");
+    } else if (battery.charging == true && barPercent < 100 && battery.chargingTime >= 3600) {
+        bStatus.textContent = `${chTime1} hrs until full`;
+        bLoad.style.display = 'none';
+        bPercent.textContent = ` ⚡${battery.level * 100}%`;
+
+        console.log(`${chTime1}mins until full`);
+    } else if (battery.charging == true && barPercent < 100 && battery.chargingTime < 3600) {
+        bStatus.textContent = `${chTimeInMins} mins until full`;
+        bLoad.style.display = 'none';
+        bPercent.textContent = ` ⚡${battery.level * 100}%`;
+
+        console.log(`${chTimeInMins} mins until full`);
+    } else if (battery.charging == true && barPercent < 100 && battery.chargingTime == 0) {
+        bStatus.textContent = `An error occured`;
+        bLoad.style.display = 'none';
+        console.log(`${chTimeInMins} mins until full error`);
+    } else {
+        bStatus.textContent = "...";
+        bLoad.style.display = 'none';
+        bPercent.textContent = `${battery.level * 100}%`;
+
+    }
+    
+    });
+     if (battery.charging == false) {
+          bStatus.textContent = "...";
+        bLoad.style.display = 'none';
+
+     }
+    
+    
+if (battery.level < user2) {
+ darkModeToggle.checked = true;
+          bodyElement.classList.add('dark-theme'); // Enable dark mode
+    showMessage("Battery less than " + user2 * 100 + "%" + " Dark mode enabled");
+} else {
+    bodyElement.classList.remove('dark-theme'); // Disable dark mode 
+    darkModeToggle.checked = false;
+}
+});
+
+const errorMessage = document.getElementById('error-message');
+
+function setError(input, message) {
+    batT.classList.add('error');
+      errorMessage.textContent = message;
+      errorMessage.classList.add('visible');
+    }
+function clearError(input) {
+      batT.classList.remove('error');
+      errorMessage.textContent = '';
+      errorMessage.classList.remove('visible');
+    }
+
+
+
+
+    
+    function saved() {
+        
+       if (batT.value > 100) {
+           console.log('over 100');
+           setError(setNo, "Battery can't be more than 100.");
+           showMessage("Opps! Try again");
+       } else if (batT.value == 0) {
+           console.log('zero');
+           setError(setNo, "Dark mode can't be enabled when battery is 0.");
+           showMessage("Opps! Try again");
+       } else if (batT.value < 0) {
+           console.log('negative value');
+           setError(setNo, "Battery can't be less than 0.");
+           showMessage("Opps! Try again");
+       } else {
+          console.log('valid');
+           execute();
+           clearError(setNo);
+       }           
+    }
+        
+/*setNo.addEventListener('input', () => {
+      clearError(setNo);
+    });*/
+
+
+
+        function execute() {
+           localStorage.setItem('setNo', batT.value / 100);
+        const user1 = localStorage.getItem('setNo', batT.value);
+        
+        
+        navigator.getBattery().then((battery) => {
+      const level1 = battery.level;
+      const user1 = localStorage.getItem('setNo', batT.value / 100);
+    // const userInput = localStorage.getItem('setNo', batT.value);
+        showMessage("Dark mode will be enabled when battery is less than " + user1 * 100 + "%");
+        
+        
+        if (level1 < user1 && user1) {
+          darkModeToggle.checked = true;
+          bodyElement.classList.add('dark-theme'); // Enable dark mode
+            showMessage("Battery less than " + user1 * 100 + "%" + " Dark mode enabled");
+            
+      } else {
+          auto();
+      }
+        
+        });
+        
+    }
+      
+    
+ function auto() {
+     navigator.getBattery().then((battery) => {
+      const level = battery.level;
+      const user = localStorage.getItem('setNo', batT.value / 100);
+     const userInput = localStorage.getItem('setNo', batT.value);
+
+   if (level < 0.6) {
+       showMessage("Battery less than 60%. Dark mode enabled")
+      } else if (level < 0.7) {
+          showMessage("Dark mode will be enabled when battery is less than 70%")
+      }  else {
+          bodyElement.classList.remove('dark-theme'); // Disable dark mode
+          darkModeToggle.checked = false;
+      }
+      
+       
+    console.log(`Battery Level: ${battery.level * 100}%`);
+    console.log(`Charging: ${battery.chargingTime}`);
+       
+     });
+ }
+ 
+
+            
+
+    let track; // To keep a reference to the camera track
+
+// Turn on the flashlight
+async function turnOnFlashlight() {
+  const loadingIndicator = document.getElementById("loading");
+  try {
+    msgPop.classList.add('pop');
+        msgBar.textContent = "Turning on flashlight";
+    // Show the loading message
+    loadingIndicator.style.display = "block";
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "environment", torch: true }
+    });
+
+    track = stream.getVideoTracks()[0];
+    const capabilities = track.getCapabilities();
+
+    if (capabilities.torch) {
+      await track.applyConstraints({ advanced: [{ torch: true }] });
+        showMessage("Flashlight turned on");
+      console.log("Flashlight turned on");
+    } else {
+        showMessage("Flashlight is not supported on this device");
+      console.log("Torch mode is not supported on this device.");
+    }
+  } catch (error) {
+      showMessage("Error accessing the flashlight");
+    flashLight.checked = false;
+    console.error("Error accessing the flashlight:", error);
+  } finally {
+    loadingIndicator.style.display = "none";
+  }
+}
+
+// Turn off the flashlight
+function turnOffFlashlight() {
+  if (track) {
+    track.stop(); // Stops the camera
+      showMessage("Flashlight turned off");
+    console.log("Flashlight turned off");
+  }
+}
+  
+  
+  const flashLight = document.getElementById('flash-light');
+
+  flashLight.addEventListener('change', () => {
+      if (flashLight.checked) {
+        turnOnFlashlight();
+      } else {
+        turnOffFlashlight();
+      }
+    });
+  
+  </script>
+ 
+</body>
+</html>
